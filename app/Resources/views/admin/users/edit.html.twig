@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
+{% block body %}
+{% block header %}
+
+    {{include('generic/page_menu.html.twig')}}
+    
+{% endblock %}
+
+{% block content %} 
+    
+     <div class="container" style="padding:50px;">
+        <div class="row uniform 50%">
+            <div class="6u 12u$(4)"">
+                <h1>Edit User</h1>
+                {{ form_start(userForm) }}
+                    {{ form_row(userForm.name) }}
+                    {{ form_row(userForm.sname, {'label' : 'Surname'}) }}
+                    {{ form_row(userForm.info) }}
+                    {{ form_row(userForm.email) }}
+                    {{ form_row(userForm.UsersFacts) }}
+                    {{ form_row(userForm.UsersType) }}
+                    {{ form_row(userForm.hasFact) }}
+                    {{ form_row(userForm.image) }}
+                    {{ form_row(userForm.date) }}
+                    <button type="submit" class="button" formnovalidate>Save</button>
+                {{ form_end(userForm) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block footer %}
+
+    {{include('generic/footer_page.html.twig')}}
+    
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+    <script>
+        jQuery(document).ready(function() {
+            $('.js-datepicker').datepicker();
+        });
+    </script>
+{% endblock %}
+
+{% endblock %}
+

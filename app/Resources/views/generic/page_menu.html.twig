@@ -1,0 +1,31 @@
+<!-- Header -->
+<header id="header">
+
+	<h1><a href="{{ path('homepage') }}">Homepage</a></h1>
+
+	<nav id="nav">
+		<ul>
+			<li><a href="{{ path('projects_url') }}">Projects</a></li>
+			<li><a href="{{ path('services_url') }}">Services</a></li>
+			<li><a href="{{ path('users_url') }}">Our Users</a></li>
+			<li><a href="{{ path('articels_url') }}">Articels</a></li>
+			<li><a href="{{ path('contact_url') }}">Contact</a></li>
+
+			{% if is_granted('ROLE_ADMIN')%}
+				<li><a href="{{ path('paneladmin_url') }}">Admin Panel</a></li>
+				<li><a href="{{ path('user_account', {'email':app.user.email}) }}">My Account</a></li>
+
+			{% elseif is_granted('ROLE_USER')%}
+				<li><a href="{{ path('user_account') }}">My Account</a></li>
+			{% else %}
+
+			{% endif %}
+
+			{% if is_granted('ROLE_USER') %}
+				<li><a href="{{path('security_logout')}}" class="button special">Logout</a></li>
+			{% else %}
+				<li><a href="{{path('security_login')}}" class="button special">Login</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>

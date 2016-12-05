@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block one %} 
+      <!-- One -->
+			<section id="one" class="wrapper style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>Our Projects</h2>
+						<p>This is list of projects realized by ours employees</p>
+					</header>
+                                    
+					<div class="row 150%">
+                                            {% for projects in project %}
+						<div class="4u 12u$(medium)">
+                                                    
+							<section class="box">
+								<i class="icon big rounded color1 fa-cloud"></i>
+                                                                
+								<h3>Project {{projects}}</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim quam consectetur quibusdam magni minus aut modi aliquid.</p>
+                                                                
+							</section>
+						</div>
+						{% endfor %}
+					</div>
+                                      
+				</div>
+			</section>
+  {% endblock %}

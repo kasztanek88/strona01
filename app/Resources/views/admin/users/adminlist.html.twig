@@ -1,0 +1,69 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+{% block header %}
+
+    {{include('generic/page_menu.html.twig')}}
+    
+{% endblock %}
+
+{% block content %} 
+    
+      <!-- One -->
+			<section id="one" class="wrapper style1 special">
+                            <div class="alert">
+                            {% for msg in app.session.flashBag.get('success') %}
+                                <p class="green" style="color:green;"> {{msg}} </p>
+                            {% endfor %}
+                            </div>
+				<div class="container">
+					<header class="major">
+						<h2>Admin Panel Lists</h2>
+						<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
+					</header>
+					<div class="row 150%" style="padding:50px;">
+						
+                                            <table class="table-striped">
+        <thead>
+            <tr>
+                <th>Who?</th>
+                <th>Wer?</th>
+                <th>Info</th>
+                <th>email</th>
+                <th>Avatar</th>
+                <th>edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>
+                       
+                        <a href="{{path('user_show_url', {'user_name':user.sname})}}">
+                            {{ user.name }}
+                        </a>
+                    </td>
+                    <td>{{ user.sname }}</td>
+                    <td>{{ user.info }}</td>
+                    <td> <img src="{{asset( user.image)}}" width="42" height="42"></td>
+                    <td>{{ user.email }}</td>
+                    <td>
+                        <a href="{{path('admin_users_edit', {'id':user.id})}}" ><img src="{{asset('images/edits.png')}}" class="btnedt"></a>
+                    </td>
+                </tr>
+           {% endfor %}
+        </tbody>
+    </table> 
+                                            
+					</div>
+				</div>
+			</section>
+  {% endblock %}
+
+{% block footer %}
+
+    {{include('generic/footer_page.html.twig')}}
+    
+{% endblock %}
+{% endblock %}
+

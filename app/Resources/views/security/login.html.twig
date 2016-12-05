@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="container">
+    <div class="row" style="padding:15px;">
+        <div class="col-xs-12" >
+            <h1>Login!</h1>
+
+            {% if error %}
+                <div class="alert alert-danger">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+
+            {{ form_start(form) }}
+                {{ form_row(form._username) }}
+                {{ form_row(form._password) }}
+                <button type="submit" class="btn btn-success">Login <span class="fa fa-lock"></span></button>
+            {{ form_end(form) }}
+                 <a href="{{path('user_register')}}"><h2> I dont have account. Please take me to registration form </h2></a>
+        </div>
+       
+    </div>
+</div>
+{% endblock %}
+

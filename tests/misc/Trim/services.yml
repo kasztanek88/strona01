@@ -1,0 +1,9 @@
+app.trim_article:
+        class: AppBundle\Services\trimArticles
+
+    app.eventlistener.trim_listener:
+        class: AppBundle\Doctrine\TrimListener
+        arguments: ['@app.trim_article']
+        tags:
+            - { name: doctrine.event_listener, event: prePersist }
+            - { name: doctrine.event_listener, event: preUpdate }

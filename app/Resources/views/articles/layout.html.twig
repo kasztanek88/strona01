@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+            <!-- Main -->
+            <section id="main" class="wrapper">
+                <div class="container">
+
+                    <header class="major">
+                        <h2>Articles Title</h2>
+                        <p>Intro</p>
+                    </header>
+                    <h4>Name of image</h4>
+                    <img src="{{ asset('images/pobrane.jpeg') }}">
+
+                    <p>Body of article</p>
+
+                </div>
+            </section>
+
+        {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

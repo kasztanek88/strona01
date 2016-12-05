@@ -1,0 +1,36 @@
+AppBundle\Entity\Users:
+    users_{1..10}:
+        name: <name()>
+        UsersFacts: '@users.facts_*'
+        UsersType: '@users.type_*'
+        sname: <text(20)>
+        email: <email()>
+        info: <sentence()>
+        hasFact: <boolean(75)>
+        date: <dateTimeBetween("-200 days", "now")>
+        image: 6523a5f358c649ff1ddfcf2eaa76b86d.jpeg
+
+AppBundle\Entity\UsersFacts:
+    users.facts_{1..10}:
+        fact: <paragraph()>
+        createdAt: <dateTimeBetween("-200 days", "now")>
+        filename: pic<numberBetween(1, 50)>.jpeg
+
+AppBundle\Entity\UsersType:
+    users.type_{1..10}:
+        type: <city()>
+
+AppBundle\Entity\User:
+    user_{1..10}:
+        email: weaverryan+<current()>@gmail.com
+        plainPassword: admin
+        roles: ['ROLE_USER']
+        birthdate: <dateTimeBetween("-200 days", "now")>
+
+AppBundle\Entity\Articles:
+    articel_{1..10}:
+        title: <text(20)>
+        artContent: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque fermentum viverra dolor, quis consequat libero pellentesque a. Nulla risus mi, imperdiet non nulla varius, ullamcorper aliquam diam. Fusce sit amet consectetur tellus. Aenean viverra ac tellus sed blandit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris bibendum magna non cursus dictum. Suspendisse porta, libero vitae pretium vulputate, sem lorem tempor nunc, eu venenatis mi quam mollis nibh. Quisque sed risus suscipit, consectetur metus ac, accumsan ante. Ut aliquet ligula id quam ultricies, ac tincidunt risus ullamcorper. Curabitur interdum sem mauris. Nam ultrices fringilla nunc, nec euismod ipsum varius vel. Morbi massa magna, ornare id tristique in, gravida at eros. Suspendisse sed libero dui. Quisque imperdiet nunc ut tortor fringilla rhoncus. Suspendisse gravida, elit eget semper volutpat, mauris felis consectetur nisl, at molestie nisl enim in erat. Cras dui mauris, cursus id tellus sed, fringilla condimentum risus.
+        updateAt: <dateTimeBetween("-200 days", "now")>
+        author: admin
+        avatarNumber: 1

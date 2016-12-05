@@ -1,0 +1,44 @@
+{% extends "base.html.twig" %}
+
+{% block one %} 
+    
+      <!-- One -->
+			<section id="one" class="wrapper style1 special">
+				<div class="container">
+					<header class="major">
+						<h2>Consectetur adipisicing elit</h2>
+						<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
+					</header>
+					<div class="row 150%">
+						
+                                            <table class="table-striped">
+        <thead>
+            <tr>
+                <th>Avatar</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Info</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td><img src="{{asset( user.image)}}" width="42" height="42"></td>
+                    <td>
+                        <a href="{{path('user_show_url', {'user_name':user.name})}}">
+                            {{ user.name }}
+                        </a>
+                    </td>
+                    <td>{{ user.sname }}</td>
+                    <td>{{ user.info }}</td>
+                    <td>{{ user.email }}</td>
+                </tr>
+           {% endfor %}
+        </tbody>
+    </table> 
+                                            
+					</div>
+				</div>
+			</section>
+  {% endblock %}

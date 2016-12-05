@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+            <!-- Main -->
+            <section id="main" class="wrapper">
+                <div class="container">
+
+                    <header class="major">
+                        <h2>{{user.email}}</h2>
+                        <p></p>
+                    </header>
+
+                    <h4>Left &amp; Right</h4>
+
+
+
+                </div>
+            </section>
+
+        {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

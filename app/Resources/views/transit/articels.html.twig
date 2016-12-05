@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+            <!-- Main -->
+            <section id="main" class="wrapper">
+                <div class="content">
+
+                    {% for art in article %}
+                    <header class="major">
+                        <h2>{{ art.title }}</h2>
+                        <p>Intro</p>
+                    </header>
+
+                    <img src="{{ asset('images/pobrane.jpg') }}">
+                        {% set arti = art.artContent|split(' ') %}
+                        <p>
+                            {% for i in arti|slice(0, 10) %}
+                                {{ i }}
+                            {% endfor %}
+                            ...
+                        </p>
+                    <a href="{{ path('read_article', {'id':art.id}) }}"><p>Read more</p></a>
+
+                    <hr>
+                    {% endfor %}
+                </div>
+
+            </section>
+
+        {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

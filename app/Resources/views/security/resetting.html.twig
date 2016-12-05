@@ -1,0 +1,14 @@
+<div class="container" style="padding:50px;">
+    <div class="row uniform 50%">
+        <div class="6u 12u$(4)"">
+        <h1>New Genus</h1>
+        {{ form_start(userForm) }}
+        {{ form_row(userForm.email) }}
+        {{ form_row(userForm.birthdate) }}
+        {# form_row(userForm.sname, {'label' : 'Surname'}) #}
+
+        <button type="submit" class="button" formnovalidate>Send me a new password</button>
+        {{ form_end(userForm) }}
+    </div>
+</div>
+</div>
