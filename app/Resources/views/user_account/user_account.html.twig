@@ -10,21 +10,21 @@
     {% block content %}
 
         {% block one %}
-            <!-- Main -->
-            <section id="main" class="wrapper">
-                <div class="container">
+            <div class="paneluser">
+<p>MY PROFILE</p>
+                <nav style=";">
+                    <ul>
+                        <li><a href="{{ path('user_account', {'email':app.user.email})}}">My Profile</a></li>
+                        <li><a href="{{ path('user_articles')}}">Articles</a></li>
+                        <li><a href="{{ path('user_misc')}}">Misc</a></li>
+                    </ul>
+                </nav>
+<hr>
+                <article>
 
-                    <header class="major">
-                        <h2>{{user.email}}</h2>
-                        <p></p>
-                    </header>
+                </article>
 
-                    <h4>Left &amp; Right</h4>
-
-
-
-                </div>
-            </section>
+            </div>
 
         {% endblock %}
     {% endblock %}

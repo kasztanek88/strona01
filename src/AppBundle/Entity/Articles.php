@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ArticlesRepository")
  * @ORM\Table(name="articles")
  */
 class Articles
@@ -30,21 +30,20 @@ class Articles
      */
     private $artContent;
     /**
-     * @ORM\Column(type="datetime")
-     * @Assert\NotBlank()
+     * @ORM\Column(type="date")
      */
     private $updateAt;
     /**
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $author;
+    private $author = 'user' ;
 
     /**
      * @ORM\Column(type="integer")
      * @Assert\NotBlank()
      */
-    private $avatarNumber;
+    private $avatarNumber = 1;
 
     /**
      * @return mixed
@@ -114,9 +113,10 @@ class Articles
     /**
      * @param mixed $updateAt
      */
-    public function setUpdateAt()
+    public function setUpdateAt($updateAt)
     {
         $this->updateAt = new \DateTime('now');
+
     }
 
     /**

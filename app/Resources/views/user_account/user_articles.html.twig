@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+            <div class="paneluser" style="padding:50px;>
+                <p>ARTICLES</p>
+                <nav style=";">
+                    <ul>
+                        <li><a href="{{ path('user_account', {'email':app.user.email})}}">My Profile</a></li>
+                        <li><a href="{{ path('user_articles')}}">Articles</a></li>
+                        <li><a href="{{ path('user_misc')}}">Misc</a></li>
+                    </ul>
+                </nav>
+            <a href="{{ path('new_article') }}"><p>Add Article</p></a>
+
+                <hr>
+                <article>
+                    <table class="table-striped">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Content</th>
+                            <th>Author</th>
+                            <th>Date</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for art in article %}
+                            <tr>
+                                <td>{{ art.title }}</td>
+                                <td>
+                                    {% set arti = art.artContent|split(' ') %}
+                                   <a href="#"><p>
+                                        {% for i in arti|slice(0, 10) %}
+                                            {{ i }}
+                                        {% endfor %}
+                                        ...
+                                    </p></a>
+                                </td>
+                                <td>{{ art.updateAt|date('Y-m-d')}}></td>
+                                <td>{{ art.author }}</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </article>
+
+            </div>
+
+        {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

@@ -40,6 +40,7 @@ class UserAdminController extends Controller
     {               
         $form = $this->createForm(UserAddForm::class);
         $form->handleRequest($request);  
+        
         if ($form->isSubmitted() && $form->isValid()) {
             $user = $form->getData();
                           

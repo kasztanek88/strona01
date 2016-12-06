@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+            <div class="paneluser" style="padding:50px;>
+                <p>ARTICLES</p>
+                <nav style=";">
+            <ul>
+                <li><a href="{{ path('user_account', {'email':app.user.email}) }}">My Profile</a></li>
+                <li><a href="{{ path('user_articles', {'email':app.user.email}) }}">Articles</a></li>
+                <li><a href="{{ path('user_misc', {'email':app.user.email} )}}">Misc</a></li>
+            </ul>
+            </nav>
+            <a href="{{ path('new_article', {'email':app.user.email}) }}"><p>Add Article</p></a>
+
+            <hr>
+            <p>Welcome, {{ app.user.email }}</p>
+
+            </div>
+
+        {% endblock %}
+        {% block two %}
+
+        <div class="container" style="padding:50px;">
+            <div class="row uniform 50%">
+                <div class="6u 12u$(4)"">
+                <h1>New Article</h1>
+                {{ form_start(newart) }}
+                {{ form_row(newart.title) }}
+                {{ form_row(newart.artContent, {'label' : 'Enter the text'}) }}
+                <button type="submit" class="button" formnovalidate>Save</button>
+                {{ form_end(newart) }}
+            </div>
+        </div>
+        </div>
+    {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+
