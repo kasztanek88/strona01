@@ -230,6 +230,22 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserNewArticleAction',  '_route' => 'new_article',);
                 }
 
+                // CKnew_article
+                if ($pathinfo === '/user_account/articles/CKnew') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserNewCKArticleAction',  '_route' => 'CKnew_article',);
+                }
+
+                // editme_url
+                if (preg_match('#^/user_account/articles/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_editme_url;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'editme_url')), array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserEditAction',));
+                }
+                not_editme_url:
+
             }
 
             // user_misc
@@ -251,6 +267,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             return array (  '_controller' => 'AppBundle\\Controller\\MainController::homepageAction',  '_route' => 'homepage',);
+        }
+
+        // KCFinder_browse
+        if ($pathinfo === '/user_account/article/kcfinder/browse.php') {
+            return array (  '_controller' => 'Ikadoc\\KCFinderBundle\\Controller\\ProxyController::proxyAction',  '_route' => 'KCFinder_browse',);
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

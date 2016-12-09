@@ -6,3 +6,7 @@ homepage:
     path: /
     defaults:
         _controller: AppBundle:Main:homepage
+
+kcfinder:
+    resource: "@IkadocKCFinderBundle/Resources/config/routing.yml"
+    prefix: /

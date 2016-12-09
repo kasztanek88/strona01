@@ -2725,5 +2725,228 @@
             "orm",
             "test"
         ]
+    },
+    {
+        "name": "egeloen/json-builder",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/egeloen/ivory-json-builder.git",
+            "reference": "c6afb2c53ac1070144d5d3330d5f86567b132d23"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/egeloen/ivory-json-builder/zipball/c6afb2c53ac1070144d5d3330d5f86567b132d23",
+            "reference": "c6afb2c53ac1070144d5d3330d5f86567b132d23",
+            "shasum": ""
+        },
+        "require": {
+            "ext-json": "*",
+            "php": ">=5.3.0",
+            "symfony/property-access": "~2.2|~3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0",
+            "satooshi/php-coveralls": "~0.6",
+            "symfony/phpunit-bridge": "~2.7|~3.0"
+        },
+        "time": "2015-12-06 13:20:24",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ivory\\JsonBuilder\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Eric GELOEN",
+                "email": "geloen.eric@gmail.com"
+            }
+        ],
+        "description": "JSON builder with escaping control for PHP 5.3+",
+        "keywords": [
+            "Escape",
+            "builder",
+            "json"
+        ]
+    },
+    {
+        "name": "egeloen/ckeditor-bundle",
+        "version": "4.0.6",
+        "version_normalized": "4.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/egeloen/IvoryCKEditorBundle.git",
+            "reference": "c974b85b79ca9186809eb8625e53544b388b0411"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/egeloen/IvoryCKEditorBundle/zipball/c974b85b79ca9186809eb8625e53544b388b0411",
+            "reference": "c974b85b79ca9186809eb8625e53544b388b0411",
+            "shasum": ""
+        },
+        "require": {
+            "egeloen/json-builder": "^1.0|^2.0",
+            "php": ">=5.3.3",
+            "symfony/dependency-injection": "^2.2|^3.0",
+            "symfony/form": "^2.2|^3.0",
+            "symfony/framework-bundle": "^2.2|^3.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.0|^5.0",
+            "symfony/phpunit-bridge": "^2.7|^3.0",
+            "symfony/yaml": "^2.0.5|^3.0",
+            "twig/twig": "^1.12"
+        },
+        "suggest": {
+            "egeloen/form-extra-bundle": "Allows to load CKEditor asynchronously",
+            "twig/twig": "Allows to use Twig templates"
+        },
+        "time": "2016-10-28 16:59:01",
+        "type": "symfony-bundle",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ivory\\CKEditorBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Eric GELOEN",
+                "email": "geloen.eric@gmail.com"
+            }
+        ],
+        "description": "Provides a CKEditor integration for your Symfony2 Project.",
+        "keywords": [
+            "CKEditor"
+        ]
+    },
+    {
+        "name": "sunhater/kcfinder",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sunhater/kcfinder.git",
+            "reference": "b645d2a81e647d63780c238b130593e32b4d95a9"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sunhater/kcfinder/zipball/b645d2a81e647d63780c238b130593e32b4d95a9",
+            "reference": "b645d2a81e647d63780c238b130593e32b4d95a9",
+            "shasum": ""
+        },
+        "require": {
+            "ext-gd": "*",
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "ext-curl": "*",
+            "ext-exif": "*",
+            "ext-fileinfo": "*",
+            "ext-gmagick": "*",
+            "ext-http": "*",
+            "ext-imagick": "*",
+            "ext-sockets": "*",
+            "ext-zip": "*"
+        },
+        "time": "2014-08-24 00:00:00",
+        "type": "library",
+        "installation-source": "source",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-3.0+",
+            "LGPL-3.0+"
+        ],
+        "authors": [
+            {
+                "name": "Pavel Tzonkov",
+                "email": "sunhater@sunhater.com",
+                "homepage": "http://sunhater.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "KCFinder web file manager",
+        "homepage": "http://kcfinder.sunhater.com",
+        "keywords": [
+            "explorer",
+            "file",
+            "file explorer",
+            "file manager",
+            "finder",
+            "kcfinder",
+            "manager"
+        ]
+    },
+    {
+        "name": "ikadoc/kcfinder-bundle",
+        "version": "1.1",
+        "version_normalized": "1.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Bilbous/KCFinderBundle.git",
+            "reference": "058483d78a6e409eb64e22307ec623a019e0288a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Bilbous/KCFinderBundle/zipball/058483d78a6e409eb64e22307ec623a019e0288a",
+            "reference": "058483d78a6e409eb64e22307ec623a019e0288a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3",
+            "symfony/dependency-injection": "~2.2|~3.0",
+            "symfony/framework-bundle": "~2.2|~3.0"
+        },
+        "require-dev": {
+            "symfony/yaml": "^2.0.5|~3.0",
+            "twig/twig": "~1.12"
+        },
+        "suggest": {
+            "twig/twig": "Allows to use Twig templates"
+        },
+        "time": "2016-03-17 15:15:52",
+        "type": "symfony-bundle",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ikadoc\\KCFinderBundle\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Yannick Cenatiempo",
+                "email": "ycenatiempo@gmail.com"
+            }
+        ],
+        "description": "Provides a KCFinder integration for CKEditor for your Symfony Project.",
+        "keywords": [
+            "CKEditor",
+            "kcfinder"
+        ]
     }
 ]

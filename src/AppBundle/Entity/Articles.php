@@ -37,7 +37,7 @@ class Articles
      * @ORM\Column(type="string")
      * @Assert\NotBlank()
      */
-    private $author = 'user' ;
+    private $author = 'user';
 
     /**
      * @ORM\Column(type="integer")

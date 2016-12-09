@@ -1,38 +1,6 @@
-{% extends "base.html.twig" %}
+{% extends 'user_account/layout.html.twig' %}
 
-{% block body %}
-    {% block header %}
-
-        {{include('generic/page_menu.html.twig')}}
-
-    {% endblock %}
-
-    {% block content %}
-
-        {% block one %}
-            <div class="paneluser">
-<p>MY PROFILE</p>
-                <nav style=";">
-                    <ul>
-                        <li><a href="{{ path('user_account', {'email':app.user.email})}}">My Profile</a></li>
-                        <li><a href="{{ path('user_articles')}}">Articles</a></li>
-                        <li><a href="{{ path('user_misc')}}">Misc</a></li>
-                    </ul>
-                </nav>
-<hr>
-                <article>
-
-                </article>
-
-            </div>
-
-        {% endblock %}
-    {% endblock %}
-
-    {% block footer %}
-
-        {{include('generic/footer_page.html.twig')}}
-
-    {% endblock %}
+{% block two %}
+    {{ dump(app.user) }}
+    <p><a href="{{ path('editme_url', {'id':app.user}) }}">edit</a></p>
 {% endblock %}
-

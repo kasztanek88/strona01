@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+ {% block stylesheets %}
+     {{ parent() }}
+     <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
+
+ {% endblock %}
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+
+
+        {% block content %}
+        {% block one %}
+                <div class="header">
+                    <h1>Welcome, {{ app.user.email }}</h1>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-3 menu">
+                        <ul>
+                            <li><a href="{{ path('user_account', {'email':app.user.email})}}">My Profile</a></li>
+                            <li><a href="{{ path('user_articles')}}">Articles</a></li>
+                            <li><a href="{{ path('user_misc')}}">Misc</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-9">
+                        {% block two %}
+                        <h1>The City</h1>
+                        <p>Chania is the capital of the Chania region on the island of Crete. The city can be divided in two parts, the old town and the modern city.</p>
+                        <p>Resize the browser window to see how the content respond to the resizing.</p>
+                            {% endblock %}
+                    </div>
+
+                </div>
+
+            </div>
+
+
+    {% endblock %}
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

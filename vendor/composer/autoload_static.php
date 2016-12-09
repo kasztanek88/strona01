@@ -63,7 +63,10 @@ class ComposerStaticInit2bacd54528de0599260d3905a1eaec01
         ),
         'I' => 
         array (
+            'Ivory\\JsonBuilder\\' => 18,
+            'Ivory\\CKEditorBundle\\' => 21,
             'Incenteev\\ParameterHandler\\' => 27,
+            'Ikadoc\\KCFinderBundle\\' => 22,
         ),
         'F' => 
         array (
@@ -183,9 +186,21 @@ class ComposerStaticInit2bacd54528de0599260d3905a1eaec01
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
+        'Ivory\\JsonBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/json-builder/src',
+        ),
+        'Ivory\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/ckeditor-bundle',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
+        ),
+        'Ikadoc\\KCFinderBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ikadoc/kcfinder-bundle',
         ),
         'Faker\\' => 
         array (

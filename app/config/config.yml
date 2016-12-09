@@ -66,3 +66,20 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# ckeditor
+
+ivory_ck_editor:
+    configs:
+        my_config:
+            toolbar: [ ["Source", "-", "Save"], "/", ["Anchor"], "/", ["Maximize"] ]
+            uiColor:                "#000000"
+            filebrowserUploadRoute: "%kernel.root_dir%/../web/uploads/"
+            extraPlugins:           "wordcount"
+
+ikadoc_kc_finder:
+    base_path : "%kernel.root_dir%/../web/bundles/kcfinder"
+    config:
+        disabled : false
+        uploadURL: "/uploads/"
+        uploadDir: "%kernel.root_dir%/../web/uploads/"

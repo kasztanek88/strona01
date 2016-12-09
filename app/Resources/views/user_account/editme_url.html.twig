@@ -1,0 +1,13 @@
+{% extends 'user_account/layout.html.twig' %}
+
+{% block two %}
+    <div style="padding:15px;">
+        <h1>Register!</h1>
+        {{ form_start(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword.first, {'label' : 'Password' }) }}
+        {{ form_row(form.plainPassword.second, {'label' : 'Repeat' }) }}
+        <button type="submit"  formnovalidate>Register</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -28,7 +28,11 @@ security:
 
             logout:
                 path: /logout
-            switch_user: ~    
+            switch_user: ~
+        manager:
+                    pattern:    ^/(manager|kcfinder)
+                    http_basic:
+                        realm: "You shall not pass"
             # activate different ways to authenticate
 
             # http_basic: ~
