@@ -53,13 +53,14 @@ class UserAccountController extends Controller
         $em = $this->getDoctrine()->getManager();
         $article = $em->getRepository('AppBundle\Entity\Articles')
             ->findAllArticlesASC();
-
+        $message = null;
         if(!$article)
         {
-            throw $this->createNotFoundException('article not found xaxax');
+            $message =  'There are no articles in database';
         }
         return $this->render('user_account/user_articles.html.twig', [
-            'article' => $article
+            'article' => $article,
+            'message' => $message
         ]);
     }
     /**
@@ -101,13 +102,13 @@ class UserAccountController extends Controller
             'newart' => $form->createView()
         ]);
     }
-
     /**
-     * @Route("/articles/CKnew", name="CKnew_article")
+     * @Route("/articles/edit/{id}", name="edit_article")
      */
-    public function UserNewCKArticleAction(Request $request)
+    public function UserEditArticleAction(Request $request, Articles $id)
     {
-        $form = $this->createForm(CKArticleForm::class);
+        
+        $form = $this->createForm(ArticleForm::class, $id);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -137,19 +138,19 @@ class UserAccountController extends Controller
 
         }
 
-        return $this->render('user_account/CKnew_article.html.twig',[
+        return $this->render('user_account/edit_article.html.twig',[
             'newart' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/articles/{id}", name="editme_url")
+     * @Route("/edit/{id}", name="editme_url")
      * @Method("GET")
      */
     public function UserEditAction(Request $request, User $id)
     {
-        dump($id);die();
-        $form = $this->createForm(UserRegistrationForm::class, User $id);
+        //dump($id);die();
+        $form = $this->createForm(UserRegistrationForm::class, $id);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
@@ -165,7 +166,7 @@ class UserAccountController extends Controller
             return $this->redirectToRoute('admin_users_list');
         }
 
-        return $this->render('admin/users/edit.html.twig',[
+        return $this->render('user_account/us_edit.html.twig',[
             'form' => $form->createView()
         ]);
     }

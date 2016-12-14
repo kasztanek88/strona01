@@ -1,1 +1,31 @@
-{{ dump(article) }}
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {% block header %}
+
+        {{include('generic/page_menu.html.twig')}}
+
+    {% endblock %}
+
+    {% block content %}
+
+        {% block one %}
+
+           <h1 style="text-align: center; padding: 10px;">{{ article.title }}</h1>
+            <p>{{ article.artContent | raw }}</p>
+            <p>{{ article.updateAt|date('Y-m-d')}}</p>
+            <p>{{ article.author }}</p>
+
+
+
+        {% endblock %}
+
+    {% endblock %}
+
+    {% block footer %}
+
+        {{include('generic/footer_page.html.twig')}}
+
+    {% endblock %}
+{% endblock %}
+

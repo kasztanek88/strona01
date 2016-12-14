@@ -1,0 +1,19 @@
+{% extends 'user_account/layout.html.twig' %}
+{% block content %}
+
+    <div class="container" style="padding:50px;">
+        <div class="row uniform 50%">
+            <div class="6u 12u$(4)"">
+            <h1 style="font-size: 200%;">Edit User</h1>
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            <p style="margin-top: 30px;"><b>Change the Password</b></p>
+            {{ form_row(form.plainPassword) }}
+
+
+            <button type="submit" class="button" formnovalidate>Save</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+    </div>
+{% endblock %}

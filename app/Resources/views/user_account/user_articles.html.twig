@@ -2,7 +2,7 @@
 
 {% block two %}
     <a href="{{ path('new_article') }}"><p>Add Article</p></a>
-
+    <a> {{ message }}</a>
     <hr>
     <article>
         <table class="table-striped">
@@ -20,7 +20,7 @@
                     <td>{{ art.title }}</td>
                     <td>
                         {% set arti = art.artContent|split(' ') %}
-                        <a href="#"><p>
+                        <a href="{{ path('edit_article', {'id':art.id}) }}"><p>
                                 {% for i in arti|slice(0, 10) %}
                                     {{ i }}
                                 {% endfor %}

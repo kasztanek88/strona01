@@ -173,6 +173,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\SecurityController::resettingAction',  '_route' => 'resetting_url',);
         }
 
+        // test_url
+        if (0 === strpos($pathinfo, '/test') && preg_match('#^/test(?:/(?P<sort>[^/]++))?$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_url')), array (  'sort' => NULL,  '_controller' => 'AppBundle\\Controller\\TestController::usersAction',));
+        }
+
         // projects_url
         if ($pathinfo === '/projects') {
             return array (  '_controller' => 'AppBundle\\Controller\\TransitController::projectsAction',  '_route' => 'projects_url',);
@@ -230,23 +235,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserNewArticleAction',  '_route' => 'new_article',);
                 }
 
-                // CKnew_article
-                if ($pathinfo === '/user_account/articles/CKnew') {
-                    return array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserNewCKArticleAction',  '_route' => 'CKnew_article',);
+                // edit_article
+                if (0 === strpos($pathinfo, '/user_account/articles/edit') && preg_match('#^/user_account/articles/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'edit_article')), array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserEditArticleAction',));
                 }
-
-                // editme_url
-                if (preg_match('#^/user_account/articles/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_editme_url;
-                    }
-
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'editme_url')), array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserEditAction',));
-                }
-                not_editme_url:
 
             }
+
+            // editme_url
+            if (0 === strpos($pathinfo, '/user_account/edit') && preg_match('#^/user_account/edit/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_editme_url;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'editme_url')), array (  '_controller' => 'AppBundle\\Controller\\UserAccount\\UserAccountController::UserEditAction',));
+            }
+            not_editme_url:
 
             // user_misc
             if ($pathinfo === '/user_account/misc') {
@@ -269,9 +274,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'AppBundle\\Controller\\MainController::homepageAction',  '_route' => 'homepage',);
         }
 
-        // KCFinder_browse
-        if ($pathinfo === '/user_account/article/kcfinder/browse.php') {
-            return array (  '_controller' => 'Ikadoc\\KCFinderBundle\\Controller\\ProxyController::proxyAction',  '_route' => 'KCFinder_browse',);
+        if (0 === strpos($pathinfo, '/e')) {
+            // ef_connect
+            if (0 === strpos($pathinfo, '/efconnect') && preg_match('#^/efconnect(?:/(?P<instance>[^/]++)(?:/(?P<homeFolder>[^/]++))?)?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'ef_connect')), array (  '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::loadAction',  'instance' => 'default',  'homeFolder' => '',));
+            }
+
+            // elfinder
+            if (0 === strpos($pathinfo, '/elfinder') && preg_match('#^/elfinder(?:/(?P<instance>[^/]++)(?:/(?P<homeFolder>[^/]++))?)?$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'elfinder')), array (  '_controller' => 'FM\\ElfinderBundle\\Controller\\ElFinderController::showAction',  'instance' => 'default',  'homeFolder' => '',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

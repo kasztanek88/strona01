@@ -20,15 +20,15 @@
                         <p>Intro</p>
                     </header>
 
-                    <img src="{{ asset('images/pobrane.jpg') }}">
+
                         {% set arti = art.artContent|split(' ') %}
-                        <p>
-                            {% for i in arti|slice(0, 10) %}
-                                {{ i }}
+                        <p class="artcontent" >
+                            {% for i in arti|slice(0, 100) %}
+                                {{ i|raw }}
                             {% endfor %}
                             ...
                         </p>
-                    <a href="{{ path('read_article', {'id':art.id}) }}"><p>Read more</p></a>
+                    <a href="{{ path('read_article', {'id':art.id}) }}"><p><b>Read more</b></p></a>
 
                     <hr>
                     {% endfor %}
@@ -45,4 +45,3 @@
 
     {% endblock %}
 {% endblock %}
-

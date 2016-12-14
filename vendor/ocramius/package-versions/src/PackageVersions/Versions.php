@@ -11,6 +11,9 @@ namespace PackageVersions;
 final class Versions
 {
     const VERSIONS = array (
+  'components/elfinder' => '2.1.5@beb325b84ffcf7340a4fa2a5e397575128416e59',
+  'components/jquery' => '1.12.4@5dd7297d7603e11e53bdcca2a71074d92de37b8f',
+  'components/jqueryui' => '1.11.4@c34f8dbf3ba57b3784b93f26119f436c0e8288e1',
   'doctrine/annotations' => 'v1.2.7@f25c8aab83e0c3e976fd7d19875f198ccf2f7535',
   'doctrine/cache' => 'v1.6.0@f8af318d14bdb0eff0336795b428b547bd39ccb6',
   'doctrine/collections' => 'v1.3.0@6c1e4eef75f310ea1b3e30945e9f06e652128b8a',
@@ -26,15 +29,22 @@ final class Versions
   'doctrine/orm' => 'v2.5.5@73e4be7c7b3ba26f96b781a40b33feba4dfa6d45',
   'egeloen/ckeditor-bundle' => '4.0.6@c974b85b79ca9186809eb8625e53544b388b0411',
   'egeloen/json-builder' => '2.0.1@c6afb2c53ac1070144d5d3330d5f86567b132d23',
+  'guzzlehttp/psr7' => '1.3.1@5c6447c9df362e8f8093bda8f5d8873fe5c7f65b',
+  'helios-ag/fm-elfinder-bundle' => '6.2.1@c8e483a8c5710bb7104e016a94b1c3f95793698a',
+  'helios-ag/fm-elfinder-php-connector' => '2.5.5@49034befab7629521f6e4e8d9a18bfe40ad5ef82',
   'ikadoc/kcfinder-bundle' => '1.1@058483d78a6e409eb64e22307ec623a019e0288a',
   'incenteev/composer-parameter-handler' => 'v2.1.2@d7ce7f06136109e81d1cb9d57066c4d4a99cf1cc',
+  'intervention/image' => '2.3.8@4064a980324f6c3bfa2bd981dfb247afa705ec3c',
   'jdorn/sql-formatter' => 'v1.2.17@64990d96e0959dff8e059dfcdc1af130728d92bc',
+  'kriswallsmith/assetic' => 'v1.3.2@9928f7c4ad98b234e3559d1049abd13387f86db5',
   'monolog/monolog' => '1.21.0@f42fbdfd53e306bda545845e4dbfd3e72edb4952',
   'ocramius/package-versions' => '1.1.1@4b2bfc8128db95b533303942b0d5b332bffa07c6',
   'ocramius/proxy-manager' => '2.0.3@51c7fdd99dba53808aaab21b34f7a55b302c160c',
   'paragonie/random_compat' => 'v2.0.2@088c04e2f261c33bed6ca5245491cfca69195ccf',
   'psr/cache' => '1.0.1@d11b50ad223250cf17b86e38383413f5a6764bf8',
+  'psr/http-message' => '1.0.1@f6561bf28d520154e4b0ec72be95418abe6d9363',
   'psr/log' => '1.0.1@5277094ed527a1c4477177d102fe4c53551953e0',
+  'robloach/component-installer' => '0.2.3@908a859aa7c4949ba9ad67091e67bac10b66d3d7',
   'sensio/distribution-bundle' => 'v5.0.12@b6dcd04595e4db95ead22ddea58c397864e00c32',
   'sensio/framework-extra-bundle' => 'v3.0.16@507a15f56fa7699f6cc8c2c7de4080b19ce22546',
   'sensiolabs/security-checker' => 'v3.0.2@21696b0daa731064c23cfb694c60a2584a7b6e93',
@@ -58,7 +68,7 @@ final class Versions
   'nelmio/alice' => '2.2.2@be940d30a450043c7991f2bc6ad19682db98c8cf',
   'sensio/generator-bundle' => 'v3.0.8@3c20d16512f37d2be159eca0411b99a141b90fa4',
   'symfony/phpunit-bridge' => 'v3.1.5@1f4e2059cf4ecae1053b9c3027b3fc548fd077b9',
-  'maciek/strona01' => '9999999-dev@fb6e6140b89f6ad0c25062aabb2d6c2c99c833a4',
+  'maciek/strona01' => '9999999-dev@6d5bf99ee843985dced043e503ec5cdc4e7ec027',
 );
 
     private function __construct()

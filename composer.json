@@ -31,6 +31,7 @@
         "doctrine/doctrine-migrations-bundle": "^1.2",
         "sunhater/kcfinder": "dev-master",
         "egeloen/ckeditor-bundle": "^4.0",
+        "helios-ag/fm-elfinder-bundle": "~6",
         "ikadoc/kcfinder-bundle": "^1.1"
     },
     "require-dev": {
@@ -65,5 +66,8 @@
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
         }
+    },
+    "config": {
+        "component-dir": "web/assets"
     }
 }

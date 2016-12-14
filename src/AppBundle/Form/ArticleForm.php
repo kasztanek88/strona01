@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Ivory\CKEditorBundle\Form\Type\CKEditorType;
+
 
 class ArticleForm extends AbstractType
 {
@@ -13,7 +15,7 @@ class ArticleForm extends AbstractType
     {
         $builder
             ->add('title')
-            ->add('artContent', TextareaType::class);
+            ->add('artContent', CKEditorType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

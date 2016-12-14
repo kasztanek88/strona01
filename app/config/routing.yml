@@ -7,6 +7,5 @@ homepage:
     defaults:
         _controller: AppBundle:Main:homepage
 
-kcfinder:
-    resource: "@IkadocKCFinderBundle/Resources/config/routing.yml"
-    prefix: /
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"

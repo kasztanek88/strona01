@@ -5,7 +5,7 @@
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">C:\xampp\htdocs\strona01\var\cache\dev</parameter>
+    <parameter key="kernel.cache_dir">C:/xampp/htdocs/strona01/var/cache/dev</parameter>
     <parameter key="kernel.logs_dir">C:\xampp\htdocs\strona01\var\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -17,7 +17,7 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="DoctrineMigrationsBundle">Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle</parameter>
       <parameter key="IvoryCKEditorBundle">Ivory\CKEditorBundle\IvoryCKEditorBundle</parameter>
-      <parameter key="IkadocKCFinderBundle">Ikadoc\KCFinderBundle\IkadocKCFinderBundle</parameter>
+      <parameter key="FMElfinderBundle">FM\ElfinderBundle\FMElfinderBundle</parameter>
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
@@ -65,7 +65,7 @@
     <parameter key="translator.logging">true</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:C:\xampp\htdocs\strona01\var\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:C:/xampp/htdocs/strona01/var/cache/dev/profiler</parameter>
     <parameter key="router.options.generator_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</parameter>
     <parameter key="router.options.generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</parameter>
@@ -82,7 +82,7 @@
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="debug.error_handler.throw_at">-1</parameter>
-    <parameter key="debug.container.dump">C:\xampp\htdocs\strona01\var\cache\dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">C:/xampp/htdocs/strona01/var/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="security.authentication.trust_resolver.anonymous_class">Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</parameter>
     <parameter key="security.authentication.trust_resolver.rememberme_class">Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
@@ -101,6 +101,7 @@
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
+      <parameter>FMElfinderBundle:Form:elfinder_widget.html.twig</parameter>
       <parameter>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
@@ -187,7 +188,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">login</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">C:\xampp\htdocs\strona01\var\cache\dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">C:/xampp/htdocs/strona01/var/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">symfonymailer88@gmail.com</parameter>
@@ -309,7 +310,7 @@
     <parameter key="doctrine.orm.second_level_cache.cache_configuration.class">Doctrine\ORM\Cache\CacheConfiguration</parameter>
     <parameter key="doctrine.orm.second_level_cache.regions_configuration.class">Doctrine\ORM\Cache\RegionsConfiguration</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">C:\xampp\htdocs\strona01\var\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">C:/xampp/htdocs/strona01/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -326,11 +327,201 @@
     <parameter key="doctrine_migrations.table_name">migration_versions</parameter>
     <parameter key="doctrine_migrations.name">Application Migrations</parameter>
     <parameter key="doctrine_migrations.organize_migrations">false</parameter>
-    <parameter key="ikadoc_kc_finder_path">C:\xampp\htdocs\strona01\app/../web/bundles/kcfinder</parameter>
-    <parameter key="ikadoc_kc_finder_config" type="collection">
-      <parameter key="disabled">false</parameter>
-      <parameter key="uploadURL">/uploads/</parameter>
-      <parameter key="uploadDir">C:\xampp\htdocs\strona01\app/../web/uploads/</parameter>
+    <parameter key="fm_elfinder.loader">FM\ElfinderBundle\Loader\ElFinderLoader</parameter>
+    <parameter key="fm_elfinder.configurator">FM\ElfinderBundle\Configuration\ElFinderConfigurationReader</parameter>
+    <parameter key="elfinder.form.type.class">FM\ElfinderBundle\Form\Type\ElFinderType</parameter>
+    <parameter key="fm_elfinder" type="collection">
+      <parameter key="instances" type="collection">
+        <parameter key="form" type="collection">
+          <parameter key="locale">en</parameter>
+          <parameter key="editor">form</parameter>
+          <parameter key="fullscreen">true</parameter>
+          <parameter key="include_assets">true</parameter>
+          <parameter key="connector" type="collection">
+            <parameter key="debug">false</parameter>
+            <parameter key="roots" type="collection">
+              <parameter key="uploads" type="collection">
+                <parameter key="driver">LocalFileSystem</parameter>
+                <parameter key="path">uploads/images</parameter>
+                <parameter key="upload_allow" type="collection">
+                  <parameter>image/png</parameter>
+                  <parameter>image/jpg</parameter>
+                  <parameter>image/jpeg</parameter>
+                </parameter>
+                <parameter key="upload_deny" type="collection">
+                  <parameter>all</parameter>
+                </parameter>
+                <parameter key="upload_max_size">2M</parameter>
+                <parameter key="volume_id">0</parameter>
+                <parameter key="start_path"></parameter>
+                <parameter key="url"></parameter>
+                <parameter key="alias"></parameter>
+                <parameter key="mime_detect">auto</parameter>
+                <parameter key="mimefile"></parameter>
+                <parameter key="img_lib">auto</parameter>
+                <parameter key="tmb_path">.tmb</parameter>
+                <parameter key="tmb_path_mode">511</parameter>
+                <parameter key="tmb_url"></parameter>
+                <parameter key="tmb_size">48</parameter>
+                <parameter key="tmb_crop">true</parameter>
+                <parameter key="tmb_bg_color">#ffffff</parameter>
+                <parameter key="copy_overwrite">true</parameter>
+                <parameter key="copy_join">true</parameter>
+                <parameter key="copy_from">true</parameter>
+                <parameter key="copy_to">true</parameter>
+                <parameter key="upload_overwrite">true</parameter>
+                <parameter key="fileMode">420</parameter>
+                <parameter key="upload_order" type="collection">
+                  <parameter>deny</parameter>
+                  <parameter>allow</parameter>
+                </parameter>
+                <parameter key="defaults" type="collection">
+                  <parameter key="read">true</parameter>
+                  <parameter key="write">true</parameter>
+                </parameter>
+                <parameter key="attributes" type="collection"/>
+                <parameter key="accepted_name">/^\w[\w\s\.\%\-]*$/u</parameter>
+                <parameter key="show_hidden">false</parameter>
+                <parameter key="disabled_commands" type="collection"/>
+                <parameter key="tree_deep">0</parameter>
+                <parameter key="check_subfolders">true</parameter>
+                <parameter key="separator">\</parameter>
+                <parameter key="date_format">j M Y H:i</parameter>
+                <parameter key="time_format">H:i</parameter>
+                <parameter key="archive_mimes" type="collection"/>
+                <parameter key="archivers" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="create" type="collection"/>
+                  <parameter key="extract" type="collection"/>
+                </parameter>
+                <parameter key="flysystem" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="type"></parameter>
+                  <parameter key="adapter_service"></parameter>
+                </parameter>
+                <parameter key="glide_url"></parameter>
+                <parameter key="glide_key"></parameter>
+                <parameter key="plugins" type="collection"/>
+                <parameter key="driver_options" type="collection"/>
+                <parameter key="dropbox_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+                <parameter key="ftp_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+                <parameter key="s3_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+              </parameter>
+            </parameter>
+            <parameter key="binds" type="collection"/>
+            <parameter key="plugins" type="collection"/>
+          </parameter>
+          <parameter key="cors_support">false</parameter>
+          <parameter key="editor_template">null</parameter>
+          <parameter key="theme">smoothness</parameter>
+          <parameter key="tinymce_popup_path"></parameter>
+          <parameter key="relative_path">true</parameter>
+          <parameter key="path_prefix">/</parameter>
+          <parameter key="visible_mime_types" type="collection"/>
+        </parameter>
+        <parameter key="default" type="collection">
+          <parameter key="locale">en</parameter>
+          <parameter key="editor">ckeditor</parameter>
+          <parameter key="include_assets">true</parameter>
+          <parameter key="connector" type="collection">
+            <parameter key="roots" type="collection">
+              <parameter key="uploads" type="collection">
+                <parameter key="driver">LocalFileSystem</parameter>
+                <parameter key="path">uploads/images</parameter>
+                <parameter key="upload_allow" type="collection">
+                  <parameter>image/png</parameter>
+                  <parameter>image/jpg</parameter>
+                  <parameter>image/jpeg</parameter>
+                </parameter>
+                <parameter key="upload_deny" type="collection">
+                  <parameter>all</parameter>
+                </parameter>
+                <parameter key="upload_max_size">2M</parameter>
+                <parameter key="volume_id">0</parameter>
+                <parameter key="start_path"></parameter>
+                <parameter key="url"></parameter>
+                <parameter key="alias"></parameter>
+                <parameter key="mime_detect">auto</parameter>
+                <parameter key="mimefile"></parameter>
+                <parameter key="img_lib">auto</parameter>
+                <parameter key="tmb_path">.tmb</parameter>
+                <parameter key="tmb_path_mode">511</parameter>
+                <parameter key="tmb_url"></parameter>
+                <parameter key="tmb_size">48</parameter>
+                <parameter key="tmb_crop">true</parameter>
+                <parameter key="tmb_bg_color">#ffffff</parameter>
+                <parameter key="copy_overwrite">true</parameter>
+                <parameter key="copy_join">true</parameter>
+                <parameter key="copy_from">true</parameter>
+                <parameter key="copy_to">true</parameter>
+                <parameter key="upload_overwrite">true</parameter>
+                <parameter key="fileMode">420</parameter>
+                <parameter key="upload_order" type="collection">
+                  <parameter>deny</parameter>
+                  <parameter>allow</parameter>
+                </parameter>
+                <parameter key="defaults" type="collection">
+                  <parameter key="read">true</parameter>
+                  <parameter key="write">true</parameter>
+                </parameter>
+                <parameter key="attributes" type="collection"/>
+                <parameter key="accepted_name">/^\w[\w\s\.\%\-]*$/u</parameter>
+                <parameter key="show_hidden">false</parameter>
+                <parameter key="disabled_commands" type="collection"/>
+                <parameter key="tree_deep">0</parameter>
+                <parameter key="check_subfolders">true</parameter>
+                <parameter key="separator">\</parameter>
+                <parameter key="date_format">j M Y H:i</parameter>
+                <parameter key="time_format">H:i</parameter>
+                <parameter key="archive_mimes" type="collection"/>
+                <parameter key="archivers" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="create" type="collection"/>
+                  <parameter key="extract" type="collection"/>
+                </parameter>
+                <parameter key="flysystem" type="collection">
+                  <parameter key="enabled">false</parameter>
+                  <parameter key="type"></parameter>
+                  <parameter key="adapter_service"></parameter>
+                </parameter>
+                <parameter key="glide_url"></parameter>
+                <parameter key="glide_key"></parameter>
+                <parameter key="plugins" type="collection"/>
+                <parameter key="driver_options" type="collection"/>
+                <parameter key="dropbox_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+                <parameter key="ftp_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+                <parameter key="s3_settings" type="collection">
+                  <parameter key="enabled">false</parameter>
+                </parameter>
+              </parameter>
+            </parameter>
+            <parameter key="debug">false</parameter>
+            <parameter key="binds" type="collection"/>
+            <parameter key="plugins" type="collection"/>
+          </parameter>
+          <parameter key="cors_support">false</parameter>
+          <parameter key="editor_template">null</parameter>
+          <parameter key="fullscreen">true</parameter>
+          <parameter key="theme">smoothness</parameter>
+          <parameter key="tinymce_popup_path"></parameter>
+          <parameter key="relative_path">true</parameter>
+          <parameter key="path_prefix">/</parameter>
+          <parameter key="visible_mime_types" type="collection"/>
+        </parameter>
+      </parameter>
+      <parameter key="configuration_provider">fm_elfinder.configurator.default</parameter>
+      <parameter key="assets_path">/assets</parameter>
+      <parameter key="loader">fm_elfinder.loader.default</parameter>
     </parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
@@ -538,10 +729,10 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>9a5EYRoAys</argument>
+                  <argument>7lsNEeilmb</argument>
                   <argument>0</argument>
-                  <argument>F4VjGIMxibW1VuVO-pj3DQ</argument>
-                  <argument>C:\xampp\htdocs\strona01\var\cache\dev/pools</argument>
+                  <argument>-O3l62Hse-bmYG3321rC-g</argument>
+                  <argument>C:/xampp/htdocs/strona01/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -551,10 +742,10 @@
               <argument type="service">
                 <service class="Symfony\Component\Cache\Adapter\AdapterInterface" public="false">
                   <tag name="cache.pool"/>
-                  <argument>ilMpFMNkrO</argument>
+                  <argument>4cX5nGIZBx</argument>
                   <argument>0</argument>
-                  <argument>F4VjGIMxibW1VuVO-pj3DQ</argument>
-                  <argument>C:\xampp\htdocs\strona01\var\cache\dev/pools</argument>
+                  <argument>-O3l62Hse-bmYG3321rC-g</argument>
+                  <argument>C:/xampp/htdocs/strona01/var/cache/dev/pools</argument>
                   <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
                   <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
                 </service>
@@ -689,7 +880,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\strona01\var\cache\dev/translations</argument>
+        <argument key="cache_dir">C:/xampp/htdocs/strona01/var/cache/dev/translations</argument>
         <argument key="debug">true</argument>
         <argument key="resource_files" type="collection">
           <argument key="af" type="collection">
@@ -1111,19 +1302,19 @@
     </service>
     <service id="cache.app" class="Symfony\Component\Cache\Adapter\FilesystemAdapter">
       <tag name="cache.pool"/>
-      <argument>qII+PCkTvA</argument>
+      <argument>sNITnFnmuJ</argument>
       <argument>0</argument>
-      <argument>C:\xampp\htdocs\strona01\var\cache\dev/pools</argument>
+      <argument>C:/xampp/htdocs/strona01/var/cache/dev/pools</argument>
       <call method="setLogger">
         <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       </call>
     </service>
     <service id="cache.system" class="Symfony\Component\Cache\Adapter\AdapterInterface">
       <tag name="cache.pool"/>
-      <argument>XkkCq9U0PX</argument>
+      <argument>73SJ4EtbSW</argument>
       <argument>0</argument>
-      <argument>F4VjGIMxibW1VuVO-pj3DQ</argument>
-      <argument>C:\xampp\htdocs\strona01\var\cache\dev/pools</argument>
+      <argument>-O3l62Hse-bmYG3321rC-g</argument>
+      <argument>C:/xampp/htdocs/strona01/var/cache/dev/pools</argument>
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
@@ -1175,6 +1366,7 @@
               <argument key="Symfony\Component\Form\Extension\Core\Type\ChoiceType">form.type.choice</argument>
               <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType">form.type.entity</argument>
               <argument key="Ivory\CKEditorBundle\Form\Type\CKEditorType">ivory_ck_editor.form.type</argument>
+              <argument key="FM\ElfinderBundle\Form\Type\ElFinderType">fm_elfinder.form.type</argument>
             </argument>
             <argument type="collection">
               <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="collection">
@@ -1380,7 +1572,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>C:\xampp\htdocs\strona01\var\cache\dev</argument>
+      <argument>C:/xampp/htdocs/strona01/var/cache/dev</argument>
     </service>
     <service id="validator" class="Symfony\Component\Validator\Validator\ValidatorInterface">
       <factory service="validator.builder" method="getValidator"/>
@@ -1442,7 +1634,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:C:\xampp\htdocs\strona01\var\cache\dev/profiler</argument>
+          <argument>file:C:/xampp/htdocs/strona01/var/cache/dev/profiler</argument>
         </service>
       </argument>
       <argument type="service" id="monolog.logger.profiler" on-invalid="null"/>
@@ -1876,7 +2068,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>584aaa00184b88.65530828</argument>
+            <argument>5851223022c9a9.84798145</argument>
           </service>
         </argument>
         <argument type="service">
@@ -1997,6 +2189,28 @@
         </argument>
         <argument type="collection">
           <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/efconnect</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/elfinder</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2121,7 +2335,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>584aaa00184b88.65530828</argument>
+            <argument>5851223022c9a9.84798145</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2213,7 +2427,7 @@
           <argument>form_div_layout.html.twig</argument>
         </argument>
         <argument key="autoescape">filename</argument>
-        <argument key="cache">C:\xampp\htdocs\strona01\var\cache\dev/twig</argument>
+        <argument key="cache">C:/xampp/htdocs/strona01/var/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
         <argument key="date" type="collection">
@@ -2335,6 +2549,7 @@
                 <argument type="service">
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
+                      <argument>FMElfinderBundle:Form:elfinder_widget.html.twig</argument>
                       <argument>IvoryCKEditorBundle:Form:ckeditor_widget.html.twig</argument>
                       <argument>form_div_layout.html.twig</argument>
                     </argument>
@@ -2362,6 +2577,9 @@
       </call>
       <call method="addExtension">
         <argument type="service" id="ivory_ck_editor.twig_extension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="twig.extension.fm_elfinder_init"/>
       </call>
       <call method="addExtension">
         <argument type="service">
@@ -2600,7 +2818,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>C:\xampp\htdocs\strona01\var\cache\dev/doctrine/orm/Proxies</argument>
+            <argument>C:/xampp/htdocs/strona01/var/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -2705,21 +2923,108 @@
             <argument type="collection">
               <argument>Source</argument>
               <argument>-</argument>
-              <argument>Save</argument>
+              <argument>NewPage</argument>
+              <argument>Preview</argument>
+              <argument>Print</argument>
+              <argument>-</argument>
+              <argument>Templates</argument>
+            </argument>
+            <argument type="collection">
+              <argument>Cut</argument>
+              <argument>Copy</argument>
+              <argument>Paste</argument>
+              <argument>PasteText</argument>
+              <argument>PasteFromWord</argument>
+              <argument>-</argument>
+              <argument>Undo</argument>
+              <argument>Redo</argument>
+            </argument>
+            <argument type="collection">
+              <argument>Find</argument>
+              <argument>Replace</argument>
+              <argument>-</argument>
+              <argument>SelectAll</argument>
+              <argument>-</argument>
+              <argument>Scayt</argument>
+            </argument>
+            <argument type="collection">
+              <argument>Form</argument>
+              <argument>Checkbox</argument>
+              <argument>Radio</argument>
+              <argument>TextField</argument>
+              <argument>Textarea</argument>
+              <argument>SelectField</argument>
+              <argument>Button</argument>
+              <argument>ImageButton</argument>
+              <argument>HiddenField</argument>
             </argument>
             <argument>/</argument>
             <argument type="collection">
+              <argument>Bold</argument>
+              <argument>Italic</argument>
+              <argument>Underline</argument>
+              <argument>Strike</argument>
+              <argument>Subscript</argument>
+              <argument>Superscript</argument>
+              <argument>-</argument>
+              <argument>RemoveFormat</argument>
+            </argument>
+            <argument type="collection">
+              <argument>NumberedList</argument>
+              <argument>BulletedList</argument>
+              <argument>-</argument>
+              <argument>Outdent</argument>
+              <argument>Indent</argument>
+              <argument>-</argument>
+              <argument>Blockquote</argument>
+              <argument>CreateDiv</argument>
+              <argument>-</argument>
+              <argument>JustifyLeft</argument>
+              <argument>JustifyCenter</argument>
+              <argument>JustifyRight</argument>
+              <argument>JustifyBlock</argument>
+              <argument>-</argument>
+              <argument>BidiLtr</argument>
+              <argument>BidiRtl</argument>
+            </argument>
+            <argument type="collection">
+              <argument>Link</argument>
+              <argument>Unlink</argument>
               <argument>Anchor</argument>
             </argument>
+            <argument type="collection">
+              <argument>Image</argument>
+              <argument>FLash</argument>
+              <argument>Table</argument>
+              <argument>HorizontalRule</argument>
+              <argument>SpecialChar</argument>
+              <argument>Smiley</argument>
+              <argument>PageBreak</argument>
+              <argument>Iframe</argument>
+            </argument>
             <argument>/</argument>
             <argument type="collection">
+              <argument>Styles</argument>
+              <argument>Format</argument>
+              <argument>Font</argument>
+              <argument>FontSize</argument>
+              <argument>TextColor</argument>
+              <argument>BGColor</argument>
+            </argument>
+            <argument type="collection">
               <argument>Maximize</argument>
+              <argument>ShowBlocks</argument>
+            </argument>
+            <argument type="collection">
+              <argument>About</argument>
             </argument>
           </argument>
-          <argument key="uiColor">#000000</argument>
-          <argument key="filebrowserUploadRoute">C:\xampp\htdocs\strona01\app/../web/uploads/</argument>
-          <argument key="extraPlugins">wordcount</argument>
+          <argument key="filebrowserBrowseRoute">elfinder</argument>
+          <argument key="filebrowserBrowseRouteParameters" type="collection"/>
         </argument>
+      </call>
+      <call method="setDefaultConfig">
+        <argument>my_config</argument>
       </call>
     </service>
     <service id="ivory_ck_editor.plugin_manager" class="Ivory\CKEditorBundle\Model\PluginManager"/>
@@ -2731,6 +3036,213 @@
     <service id="ivory_ck_editor.twig_extension" class="Ivory\CKEditorBundle\Twig\CKEditorExtension">
       <tag name="twig.extension"/>
       <argument type="service" id="ivory_ck_editor.renderer"/>
+    </service>
+    <service id="fm_elfinder.configurator.default" class="FM\ElfinderBundle\Configuration\ElFinderConfigurationReader">
+      <argument type="collection">
+        <argument key="instances" type="collection">
+          <argument key="form" type="collection">
+            <argument key="locale">en</argument>
+            <argument key="editor">form</argument>
+            <argument key="fullscreen">true</argument>
+            <argument key="include_assets">true</argument>
+            <argument key="connector" type="collection">
+              <argument key="debug">false</argument>
+              <argument key="roots" type="collection">
+                <argument key="uploads" type="collection">
+                  <argument key="driver">LocalFileSystem</argument>
+                  <argument key="path">uploads/images</argument>
+                  <argument key="upload_allow" type="collection">
+                    <argument>image/png</argument>
+                    <argument>image/jpg</argument>
+                    <argument>image/jpeg</argument>
+                  </argument>
+                  <argument key="upload_deny" type="collection">
+                    <argument>all</argument>
+                  </argument>
+                  <argument key="upload_max_size">2M</argument>
+                  <argument key="volume_id">0</argument>
+                  <argument key="start_path"></argument>
+                  <argument key="url"></argument>
+                  <argument key="alias"></argument>
+                  <argument key="mime_detect">auto</argument>
+                  <argument key="mimefile"></argument>
+                  <argument key="img_lib">auto</argument>
+                  <argument key="tmb_path">.tmb</argument>
+                  <argument key="tmb_path_mode">511</argument>
+                  <argument key="tmb_url"></argument>
+                  <argument key="tmb_size">48</argument>
+                  <argument key="tmb_crop">true</argument>
+                  <argument key="tmb_bg_color">#ffffff</argument>
+                  <argument key="copy_overwrite">true</argument>
+                  <argument key="copy_join">true</argument>
+                  <argument key="copy_from">true</argument>
+                  <argument key="copy_to">true</argument>
+                  <argument key="upload_overwrite">true</argument>
+                  <argument key="fileMode">420</argument>
+                  <argument key="upload_order" type="collection">
+                    <argument>deny</argument>
+                    <argument>allow</argument>
+                  </argument>
+                  <argument key="defaults" type="collection">
+                    <argument key="read">true</argument>
+                    <argument key="write">true</argument>
+                  </argument>
+                  <argument key="attributes" type="collection"/>
+                  <argument key="accepted_name">/^\w[\w\s\.\%\-]*$/u</argument>
+                  <argument key="show_hidden">false</argument>
+                  <argument key="disabled_commands" type="collection"/>
+                  <argument key="tree_deep">0</argument>
+                  <argument key="check_subfolders">true</argument>
+                  <argument key="separator">\</argument>
+                  <argument key="date_format">j M Y H:i</argument>
+                  <argument key="time_format">H:i</argument>
+                  <argument key="archive_mimes" type="collection"/>
+                  <argument key="archivers" type="collection">
+                    <argument key="enabled">false</argument>
+                    <argument key="create" type="collection"/>
+                    <argument key="extract" type="collection"/>
+                  </argument>
+                  <argument key="flysystem" type="collection">
+                    <argument key="enabled">false</argument>
+                    <argument key="type"></argument>
+                    <argument key="adapter_service"></argument>
+                  </argument>
+                  <argument key="glide_url"></argument>
+                  <argument key="glide_key"></argument>
+                  <argument key="plugins" type="collection"/>
+                  <argument key="driver_options" type="collection"/>
+                  <argument key="dropbox_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                  <argument key="ftp_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                  <argument key="s3_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                </argument>
+              </argument>
+              <argument key="binds" type="collection"/>
+              <argument key="plugins" type="collection"/>
+            </argument>
+            <argument key="cors_support">false</argument>
+            <argument key="editor_template">null</argument>
+            <argument key="theme">smoothness</argument>
+            <argument key="tinymce_popup_path"></argument>
+            <argument key="relative_path">true</argument>
+            <argument key="path_prefix">/</argument>
+            <argument key="visible_mime_types" type="collection"/>
+          </argument>
+          <argument key="default" type="collection">
+            <argument key="locale">en</argument>
+            <argument key="editor">ckeditor</argument>
+            <argument key="include_assets">true</argument>
+            <argument key="connector" type="collection">
+              <argument key="roots" type="collection">
+                <argument key="uploads" type="collection">
+                  <argument key="driver">LocalFileSystem</argument>
+                  <argument key="path">uploads/images</argument>
+                  <argument key="upload_allow" type="collection">
+                    <argument>image/png</argument>
+                    <argument>image/jpg</argument>
+                    <argument>image/jpeg</argument>
+                  </argument>
+                  <argument key="upload_deny" type="collection">
+                    <argument>all</argument>
+                  </argument>
+                  <argument key="upload_max_size">2M</argument>
+                  <argument key="volume_id">0</argument>
+                  <argument key="start_path"></argument>
+                  <argument key="url"></argument>
+                  <argument key="alias"></argument>
+                  <argument key="mime_detect">auto</argument>
+                  <argument key="mimefile"></argument>
+                  <argument key="img_lib">auto</argument>
+                  <argument key="tmb_path">.tmb</argument>
+                  <argument key="tmb_path_mode">511</argument>
+                  <argument key="tmb_url"></argument>
+                  <argument key="tmb_size">48</argument>
+                  <argument key="tmb_crop">true</argument>
+                  <argument key="tmb_bg_color">#ffffff</argument>
+                  <argument key="copy_overwrite">true</argument>
+                  <argument key="copy_join">true</argument>
+                  <argument key="copy_from">true</argument>
+                  <argument key="copy_to">true</argument>
+                  <argument key="upload_overwrite">true</argument>
+                  <argument key="fileMode">420</argument>
+                  <argument key="upload_order" type="collection">
+                    <argument>deny</argument>
+                    <argument>allow</argument>
+                  </argument>
+                  <argument key="defaults" type="collection">
+                    <argument key="read">true</argument>
+                    <argument key="write">true</argument>
+                  </argument>
+                  <argument key="attributes" type="collection"/>
+                  <argument key="accepted_name">/^\w[\w\s\.\%\-]*$/u</argument>
+                  <argument key="show_hidden">false</argument>
+                  <argument key="disabled_commands" type="collection"/>
+                  <argument key="tree_deep">0</argument>
+                  <argument key="check_subfolders">true</argument>
+                  <argument key="separator">\</argument>
+                  <argument key="date_format">j M Y H:i</argument>
+                  <argument key="time_format">H:i</argument>
+                  <argument key="archive_mimes" type="collection"/>
+                  <argument key="archivers" type="collection">
+                    <argument key="enabled">false</argument>
+                    <argument key="create" type="collection"/>
+                    <argument key="extract" type="collection"/>
+                  </argument>
+                  <argument key="flysystem" type="collection">
+                    <argument key="enabled">false</argument>
+                    <argument key="type"></argument>
+                    <argument key="adapter_service"></argument>
+                  </argument>
+                  <argument key="glide_url"></argument>
+                  <argument key="glide_key"></argument>
+                  <argument key="plugins" type="collection"/>
+                  <argument key="driver_options" type="collection"/>
+                  <argument key="dropbox_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                  <argument key="ftp_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                  <argument key="s3_settings" type="collection">
+                    <argument key="enabled">false</argument>
+                  </argument>
+                </argument>
+              </argument>
+              <argument key="debug">false</argument>
+              <argument key="binds" type="collection"/>
+              <argument key="plugins" type="collection"/>
+            </argument>
+            <argument key="cors_support">false</argument>
+            <argument key="editor_template">null</argument>
+            <argument key="fullscreen">true</argument>
+            <argument key="theme">smoothness</argument>
+            <argument key="tinymce_popup_path"></argument>
+            <argument key="relative_path">true</argument>
+            <argument key="path_prefix">/</argument>
+            <argument key="visible_mime_types" type="collection"/>
+          </argument>
+        </argument>
+        <argument key="configuration_provider">fm_elfinder.configurator.default</argument>
+        <argument key="assets_path">/assets</argument>
+        <argument key="loader">fm_elfinder.loader.default</argument>
+      </argument>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fm_elfinder.loader.default" class="FM\ElfinderBundle\Loader\ElFinderLoader">
+      <argument type="service" id="fm_elfinder.configurator.default"/>
+    </service>
+    <service id="twig.extension.fm_elfinder_init" class="FM\ElfinderBundle\Twig\Extension\FMElfinderExtension">
+      <tag name="twig.extension" alias="fm_elfinder_init"/>
+      <argument type="service" id="twig"/>
+    </service>
+    <service id="fm_elfinder.form.type" class="FM\ElfinderBundle\Form\Type\ElFinderType">
+      <tag name="form.type"/>
     </service>
     <service id="data_collector.dump" class="Symfony\Component\HttpKernel\DataCollector\DumpDataCollector">
       <tag name="data_collector" id="dump" template="@Debug/Profiler/dump.html.twig" priority="240"/>
@@ -2969,7 +3481,7 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>C:\xampp\htdocs\strona01\var\cache\dev/sessions</argument>
+      <argument>C:/xampp/htdocs/strona01/var/cache/dev/sessions</argument>
       <argument>MOCKSESSID</argument>
       <argument type="service" id="session.storage.metadata_bag"/>
     </service>
@@ -3004,7 +3516,7 @@
       <argument type="service" id="service_container"/>
       <argument>C:\xampp\htdocs\strona01\app/config/routing_dev.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">C:\xampp\htdocs\strona01\var\cache\dev</argument>
+        <argument key="cache_dir">C:/xampp/htdocs/strona01/var/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -3030,7 +3542,7 @@
       </argument>
       <argument type="service">
         <service class="Doctrine\Common\Cache\FilesystemCache" public="false">
-          <argument>C:\xampp\htdocs\strona01\var\cache\dev/annotations</argument>
+          <argument>C:/xampp/htdocs/strona01/var/cache/dev/annotations</argument>
         </service>
       </argument>
       <argument>true</argument>
@@ -3077,6 +3589,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\strona01\vendor\egeloen\ckeditor-bundle/Resources/views</argument>
         <argument>IvoryCKEditor</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\strona01\vendor\helios-ag\fm-elfinder-bundle/Resources/views</argument>
+        <argument>FMElfinder</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\strona01\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
@@ -3192,6 +3708,8 @@
     <service id="doctrine.orm.default_metadata_cache" alias="doctrine_cache.providers.doctrine.orm.default_metadata_cache"/>
     <service id="doctrine.orm.default_result_cache" alias="doctrine_cache.providers.doctrine.orm.default_result_cache"/>
     <service id="doctrine.orm.default_query_cache" alias="doctrine_cache.providers.doctrine.orm.default_query_cache"/>
+    <service id="fm_elfinder.configurator" alias="fm_elfinder.configurator.default"/>
+    <service id="fm_elfinder.loader" alias="fm_elfinder.loader.default"/>
     <service id="console.command.sensiolabs_security_command_securitycheckercommand" alias="sensio_distribution.security_checker.command"/>
   </services>
 </container>

@@ -1,6 +1,6 @@
 {% extends 'user_account/layout.html.twig' %}
 
 {% block two %}
-    {{ dump(app.user) }}
-    <p><a href="{{ path('editme_url', {'id':app.user}) }}">edit</a></p>
+    <h1>{{ user.email|upper }}, What would u like to do? </h1>
+    <p><a href="{{ path('editme_url', {'id':app.user.id}) }}">edit me</a></p>
 {% endblock %}
