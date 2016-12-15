@@ -18,6 +18,18 @@ class ArticlesRepository extends EntityRepository
             ->execute();
 
     }
+    /**
+     * @return Articles[]
+     */
+    public function findAllArticlesASC()
+    {
+        return $this->createQueryBuilder('articles')
+            ->orderBy('articles.updateAt', 'ASC')
+            ->getQuery()
+            ->execute();
+
+    }
+    
 }
 
 

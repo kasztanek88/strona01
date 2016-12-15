@@ -175,8 +175,14 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         // test_url
         if (0 === strpos($pathinfo, '/test') && preg_match('#^/test(?:/(?P<sort>[^/]++))?$#s', $pathinfo, $matches)) {
+            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                $allow = array_merge($allow, array('GET', 'HEAD'));
+                goto not_test_url;
+            }
+
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'test_url')), array (  'sort' => NULL,  '_controller' => 'AppBundle\\Controller\\TestController::usersAction',));
         }
+        not_test_url:
 
         // projects_url
         if ($pathinfo === '/projects') {

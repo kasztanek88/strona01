@@ -16,21 +16,36 @@ class TestController extends Controller
 {
     /**
      * @Route("/test/{sort}", name="test_url")
+     * @Method("GET")
      */
     public function usersAction($sort=null)
     {
-        var_dump($sort);
+
         $em = $this->getDoctrine()->getManager();
+
         switch($sort)
         {
             case 'name':
                 $guys = $em->getRepository('AppBundle\Entity\Users')
-                    ->findAllUsersASC();
+                    ->findBy(array(),array('name' => 'ASC'));
                 break;
+            case 'info':
+                $guys = $em->getRepository('AppBundle\Entity\Users')
+                    ->findBy(array(),array('info' => 'ASC'));
+                break;
+            case 'sname':
+                $guys = $em->getRepository('AppBundle\Entity\Users')
+                    ->findBy(array(),array('sname' => 'ASC'));
+                break;
+            case 'email':
+                $guys = $em->getRepository('AppBundle\Entity\Users')
+                    ->findBy(array(),array('email' => 'ASC'));
+                break;
+
             default:
                 $guys = $em->getRepository('AppBundle\Entity\Users')
-                 ->findAllUsersASC();
-                break;
+                    ->findAllUsersASC();
+               break;
         }
 
 
@@ -39,4 +54,8 @@ class TestController extends Controller
         ]);
 
     }
+
+
+
+
 }
