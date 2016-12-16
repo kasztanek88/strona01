@@ -7,10 +7,9 @@
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/skel.css') }}">
-            <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+			<link rel="stylesheet" href="{{ asset('css/style.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/skel.css') }}"
             <link rel="stylesheet" href="{{ asset('css/style-xlarge.css') }}">
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
@@ -150,10 +149,11 @@
         
         
         {% block javascripts %}
-            <script src="{{ asset('js/jquery.min.js') }}"></script>
+			<script src="{{ asset('js/jquery.js') }}"></script>
             <script src="{{ asset('js/skel.min.js') }}"></script>
             <script src="{{ asset('js/skel-layers.min.js') }}"></script>
             <script src="{{ asset('js/init.js') }}"></script>
+
                     {% endblock %}
     </body>
     {% endblock %}

@@ -1,7 +1,18 @@
 {% extends "base.html.twig" %}
 
-{% block one %} 
-    
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/style-xlarge.css') }}">
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
+
+{% endblock %}
+
+
+
+
+
+{% block one %}
+
       <!-- One -->
 			<section id="one" class="wrapper style1 special">
 				<div class="container">
@@ -10,11 +21,11 @@
 						<p>Lorem ipsum dolor sit amet, delectus consequatur, similique quia!</p>
 					</header>
 					<div class="row 150%">
-						
-                                            <table class="table-striped">
+
+                                            <table id="sortingtab" class="table-striped">
         <thead>
             <tr>
-                <th>Avatar</th>
+                <th data-orderable="false">Avatar</th>
                 <th>Name</th>
                 <th>Surname</th>
                 <th>Info</th>
@@ -42,3 +53,16 @@
 				</div>
 			</section>
   {% endblock %}
+
+    {% block javascripts %}
+
+        {{ parent() }}
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('#sortingtab').DataTable();
+            } );
+        </script>
+
+    {% endblock %}

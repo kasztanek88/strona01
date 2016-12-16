@@ -1,4 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+   {{ parent() }}
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
 
+{% endblock %}
+{% block body %}
+    {% block header %}
+        {{ parent() }}
+        {% endblock %}
+            {% block content %}
 <section id="one" class="wrapper style1 special">
     <div class="container">
         <header class="major">
@@ -7,14 +17,14 @@
         </header>
         <div class="row 150%">
 
-            <table class="table-striped">
+            <table id="sortingtab">
                 <thead>
                 <tr>
-                    <th>Avatar</th>
-                    <th> <a href="{{ path('test_url', {'sort':'name'}) }}">Name</a></th>
-                    <th><a href="{{ path('test_url', {'sort':'sname'}) }}">Surname</a></th>
-                    <th><a href="{{ path('test_url', {'sort':'info'}) }}">Info</a></th>
-                    <th><a href="{{ path('test_url', {'sort':'email'}) }}">Email</a></th>
+                    <th data-orderable="false">Avatar</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Info</th>
+                    <th>Email</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -37,3 +47,17 @@
         </div>
     </div>
 </section>
+{% endblock %}
+    {% block javascripts %}
+
+        {{ parent() }}
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('#sortingtab').DataTable();
+            } );
+        </script>
+    {% endblock %}
+
+{% endblock %}
