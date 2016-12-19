@@ -23,7 +23,7 @@
 
             <div class="container" style="padding:50px;">
                 <div class="row uniform 50%">
-                    <div class="6u 12u$(4)"">
+                    <div class="editor1">
                     <h1>New Article</h1>
                     {{ form_start(newart) }}
                     {{ form_row(newart.title) }}
@@ -34,5 +34,12 @@
             </div>
             </div>
         {% endblock %}
+
+    {% block javascripts %}
+
+        {{ parent() }}
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+    {% endblock %}
 {% endblock %}
 

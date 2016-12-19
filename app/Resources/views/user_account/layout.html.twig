@@ -1,9 +1,12 @@
 {% extends "base.html.twig" %}
+
  {% block stylesheets %}
      {{ parent() }}
      <link rel="stylesheet" href="{{ asset('css/grid.css') }}">
-
+     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.13/css/jquery.dataTables.css">
  {% endblock %}
+
+
 {% block body %}
     {% block header %}
 
@@ -49,6 +52,18 @@
 
         {{include('generic/footer_page.html.twig')}}
 
+    {% endblock %}
+    {% block javascripts %}
+
+        {{ parent() }}
+        <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.js"></script>
+
+
+        <script>
+            $(document).ready( function () {
+                $('#sortingtab').DataTable();
+            } );
+        </script>
     {% endblock %}
 {% endblock %}
 
